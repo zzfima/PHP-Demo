@@ -1,7 +1,7 @@
 # PHP-Demo
 
 ## Install PHP
-1. https://www.php.net/, Downloads.
+1. https://www.php.net/, go to Downloads.
 2. Copy to Program files
 3. Add to the system path
 4. test: in cmd php -v
