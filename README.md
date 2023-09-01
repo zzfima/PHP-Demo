@@ -6,6 +6,10 @@
 3. Add to the system path
 4. test: in cmd php -v
 
+## Install other products
+1. mysql
+2. python
+
 ## Run
 1. Check pc ip (for example it 10.10.10.233)
 2. run in cmd: php -S 10.10.10.233:5760
