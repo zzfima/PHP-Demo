@@ -9,14 +9,12 @@
 <body>
   <?php
   require_once("db_functions.php");
-  $mysqliteWrapper = new mysqlite\mysqliteWrapper();
+  $dbWrapper = new db_helper\sqliteWrapper();
 
-  //connect to mysqldb
-  [$serverName, $userName, $password] = $mysqliteWrapper->get_credentials();
-  $conn = new mysqli($serverName, $userName, $password);
+  $conn = $dbWrapper->connect_to_db();
 
   //get current user
-  $user_result = $mysqliteWrapper->get_current_user($conn);
+  $user_result = $dbWrapper->get_current_user($conn);
   echo ("CURRENT_USER: $user_result<br>");
 
   try {
@@ -31,8 +29,7 @@
     echo 'Caught exception: ', $e->getMessage(), "\n";
   }
 
-  //close connection with mysql db
-  $conn->close();
+  $dbWrapper->close_db_connection($conn);
 
   //run python
   $output = exec("python op1.py");
