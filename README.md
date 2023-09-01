@@ -1,5 +1,7 @@
 # PHP-Demo
 
+Work with OOP, classes, functions, namespaces, using, MySQL, python
+
 ## Install PHP
 1. https://www.php.net/, go to Downloads.
 2. Copy to Program files
