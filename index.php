@@ -8,18 +8,15 @@
 
 <body>
   <?php
-  //SQLLite connection
-  $serverName = "localhost";
-  $userName = "root";
-  $password = "ExTuHaPQ2Kh";
+  require_once("db_functions.php");
+  $mysqliteWrapper = new mysqlite\mysqliteWrapper();
 
-  // Create connection
+  //connect to mysqldb
+  [$serverName, $userName, $password] = $mysqliteWrapper->get_credentials();
   $conn = new mysqli($serverName, $userName, $password);
 
-  //GET CURRENT_USER
-  $sql = "SELECT CURRENT_USER()";
-  $result = mysqli_query($conn, $sql);
-  $user_result = $result->fetch_array()[0] ?? '';
+  //get current user
+  $user_result = $mysqliteWrapper->get_current_user($conn);
   echo ("CURRENT_USER: $user_result<br>");
 
   try {
