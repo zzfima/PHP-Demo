@@ -39,6 +39,19 @@ namespace db_helper {
          * @param \mysqli $conn
          * @param string $dbName
          */
+        function is_db_exists($conn, $dbName): bool
+        {
+            $sql = "SELECT count(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$dbName'";
+            $result = $conn->query($sql);
+            $res = $result->fetch_array()[0] == 1 ? true : false;
+            return $res;
+        }
+
+        /**
+         * Create db
+         * @param \mysqli $conn
+         * @param string $dbName
+         */
         function create_db($conn, $dbName)
         {
             $sql = "CREATE DATABASE $dbName";

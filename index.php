@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Simple hello world</title>
+  <title>PHP functionality</title>
 </head>
 
 <body>
@@ -16,10 +16,14 @@
   $user_result = $dbWrapper->get_current_user($conn);
   echo ("CURRENT_USER: $user_result<br>");
 
-  try {
-    $dbWrapper->create_db($conn, "myDB");
-  } catch (Exception $e) {
-    echo 'Caught exception: ', $e->getMessage(), "<br>";
+  echo 'is db exists: ', $dbWrapper->is_db_exists($conn, "myDB"), "<br>";
+
+  if ($dbWrapper->is_db_exists($conn, "myDB") == false) {
+    try {
+      $dbWrapper->create_db($conn, "myDB");
+    } catch (Exception $e) {
+      echo 'Caught exception: ', $e->getMessage(), "<br>";
+    }
   }
 
   $dbWrapper->close_db_connection($conn);
