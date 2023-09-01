@@ -1,10 +1,10 @@
 <?php
-
 namespace db_helper {
+    require_once("db_interfaces.php");
     /**
      * Wrapper for sqlite db
      */
-    class sqliteWrapper
+    class sqliteWrapper implements dbWrapper
     {
         /**
          * Connect to db

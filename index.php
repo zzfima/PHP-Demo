@@ -8,7 +8,8 @@
 
 <body>
   <?php
-  require_once("db_functions.php");
+  require_once("mysql_functions.php");
+
   $dbWrapper = new db_helper\sqliteWrapper();
 
   $conn = $dbWrapper->connect_to_db();
