@@ -2,9 +2,9 @@
 namespace db_helper {
     require_once("db_interfaces.php");
     /**
-     * Wrapper for sqlite db
+     * Wrapper for mysql db
      */
-    class sqliteWrapper implements dbWrapper
+    class mysqlWrapper implements dbWrapper
     {
         /**
          * Connect to db
@@ -12,7 +12,7 @@ namespace db_helper {
          */
         function connect_to_db(): \mysqli
         {
-            //sqlite connection
+            //mysql connection
             $serverName = "localhost";
             $userName = "root";
             $password = "ExTuHaPQ2Kh";

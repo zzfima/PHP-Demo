@@ -8,13 +8,11 @@ namespace db_helper {
     {
         /**
          * Connect to db
-         * @return \mysqli
          */
-        public function connect_to_db(): \mysqli;
+        public function connect_to_db();
 
         /**
          * Receive current user from db
-         * @param \mysqli $conn
          * @return string
          */
         public function get_current_user($conn): string;
@@ -35,7 +33,6 @@ namespace db_helper {
 
         /**
          * Closing connection
-         * @param \mysqli $conn
          */
         public function close_db_connection($conn);
     }

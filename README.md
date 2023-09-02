@@ -7,6 +7,7 @@ Work with OOP, classes, functions, namespaces, using, MySQL, python
 2. Copy to Program files
 3. Add to the system path
 4. test: in cmd php -v
+5. copy php.ini file to installation folder
 
 ## Install other products
 1. mysql
