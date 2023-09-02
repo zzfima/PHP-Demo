@@ -19,6 +19,9 @@ namespace db_helper {
             $this->close();
         }
 
+        /**
+         * Read data from db
+         */
         function display_remote_machines()
         {
             $sql = <<<EOF
