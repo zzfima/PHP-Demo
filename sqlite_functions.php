@@ -19,7 +19,7 @@ namespace db_helper {
             $this->close();
         }
 
-        public function display_remote_machines()
+        function display_remote_machines()
         {
             $sql = <<<EOF
             SELECT * from RemoteMachine;
