@@ -34,9 +34,18 @@
   $dbWrapperSqlite->close_db_connection();
 
   //run python
-  $output = exec("python op1.py");
+  //$output = exec("python op1.py");
+  
+  //use functional programming
+  $pathToPythonFile = ["python op1.py"];
+  $runPythonFile = function ($path) {
+    return exec($path);
+  };
+
+  $pythonRes = array_map($runPythonFile, $pathToPythonFile);
+
   echo "121 divided by 4 is <br>";
-  echo "<h1>$output</h1>"; ?>
+  echo "<h1>$pythonRes[0]</h1>"; ?>
 </body>
 
 </html>
